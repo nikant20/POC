@@ -1,0 +1,5 @@
+package tech.nikant.annotations;
+
+public @interface Mapper {
+
+}

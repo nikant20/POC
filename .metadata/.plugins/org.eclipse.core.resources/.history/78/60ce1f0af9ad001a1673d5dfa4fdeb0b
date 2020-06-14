@@ -1,0 +1,22 @@
+package tech.nikant.mapping;
+
+import java.lang.annotation.Annotation;
+
+import sun.security.mscapi.KeyStore.MY;
+import tech.nikant.annotations.Mapper;
+import tech.nikant.pojo.EmployeeDto;
+import tech.nikant.pojo.EmployeeTo;
+
+public class POJOMapping {
+
+	public EmployeeDto MapEmployeeDtoToEmployeeTO() {
+		EmployeeDto dto = new EmployeeDto(101,"Nikant","Development");
+		Class dtoClass = EmployeeDto.class;
+		Annotation annotation = dtoClass.getAnnotation(Mapper.class);
+		Mapper myAnnotation = (Mapper) annotation;
+		Class<?> targetClass = myAnnotation.target();
+		Class<?> getInstace = targetClass.getClass();
+		
+		return dto;
+	}
+}

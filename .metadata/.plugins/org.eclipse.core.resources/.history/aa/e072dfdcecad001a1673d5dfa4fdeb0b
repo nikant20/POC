@@ -1,0 +1,15 @@
+package tech.nikant.mapping;
+
+import tech.nikant.pojo.EmployeeDto;
+
+public class Map {
+	public static void main(String[] args) {
+		
+		EmployeeDto dto = new EmployeeDto();
+		try {
+			Class<T> class = dto.getClass();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

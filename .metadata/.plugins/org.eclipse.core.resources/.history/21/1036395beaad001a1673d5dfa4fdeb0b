@@ -1,0 +1,6 @@
+package tech.nikant.pojo;
+
+
+public class EmployeeDto {
+	
+}

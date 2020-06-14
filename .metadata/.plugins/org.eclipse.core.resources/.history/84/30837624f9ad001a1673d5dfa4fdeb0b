@@ -1,0 +1,15 @@
+package tech.nikant.mapping;
+
+import tech.nikant.pojo.EmployeeDto;
+import tech.nikant.pojo.EmployeeTo;
+
+public class Map {
+	public static void main(String[] args) {
+		
+		POJOMapping mapping  = new POJOMapping();
+		EmployeeDto mapEmployeeDtoToEmployeeTO = mapping.MapEmployeeDtoToEmployeeTO();
+		System.out.println(mapEmployeeDtoToEmployeeTO.getName());
+		
+		
+	}
+}

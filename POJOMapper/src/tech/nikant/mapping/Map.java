@@ -1,0 +1,16 @@
+package tech.nikant.mapping;
+
+import java.lang.reflect.InvocationTargetException;
+
+import tech.nikant.pojo.EmployeeTo;
+
+public class Map {
+	public static void main(String[] args) throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, NoSuchMethodException, InstantiationException, InvocationTargetException {
+		
+		POJOMapping mapping  = new POJOMapping();
+		EmployeeTo mapEmployeeDtoToEmployeeTO = (EmployeeTo)mapping.MapEmployeeDtoToEmployeeTO();
+		System.out.println(mapEmployeeDtoToEmployeeTO.getId());
+		System.out.println(mapEmployeeDtoToEmployeeTO.getName());
+		System.out.println(mapEmployeeDtoToEmployeeTO.getDepartment());
+	}
+}

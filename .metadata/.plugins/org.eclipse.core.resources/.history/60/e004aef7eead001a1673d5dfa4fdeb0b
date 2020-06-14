@@ -1,0 +1,9 @@
+package tech.nikant.mapping;
+
+public class Map {
+	public static void main(String[] args) {
+		
+		POJOMapping mapping  = new POJOMapping();
+		mapping.setValueToEmployeeDto();
+	}
+}

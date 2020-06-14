@@ -1,0 +1,37 @@
+package tech.nikant.mapping;
+
+import java.lang.reflect.Field;
+
+import tech.nikant.annotations.Mapper;
+import tech.nikant.pojo.EmployeeDto;
+import tech.nikant.pojo.EmployeeTo;
+
+public class POJOMapping {
+
+	public EmployeeTo MapEmployeeDtoToEmployeeTO() {
+		EmployeeDto dto = new EmployeeDto(101,"Nikant","Development");
+		EmployeeTo to = new EmployeeTo();
+		try {
+			Class<?> dtoClass = dto.getClass();
+			Field[] fields = dtoClass.getFields();
+			for (Field field : fields) {
+				System.out.println(field.getName());
+			}
+			
+			Mapper mapper = dtoClass.getAnnotation(Mapper.class);
+			
+			/*
+			 * to.setId((int) mapper.getClass().getDeclaredField("id").get(dto));
+			 * to.setName((String) mapper.getClass().getDeclaredField("name").get(dto));
+			 * to.setDepartment((String)
+			 * mapper.getClass().getDeclaredField("department").get(dto));
+			 */
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return to;
+	}
+}

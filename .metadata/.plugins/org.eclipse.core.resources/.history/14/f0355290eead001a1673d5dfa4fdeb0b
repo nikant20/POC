@@ -1,0 +1,11 @@
+package tech.nikant.mapping;
+
+import tech.nikant.annotations.Mapper;
+import tech.nikant.pojo.EmployeeDto;
+
+public class Map {
+	public static void main(String[] args) {
+		
+		
+	}
+}

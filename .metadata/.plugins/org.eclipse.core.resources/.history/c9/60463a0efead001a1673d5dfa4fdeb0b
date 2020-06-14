@@ -1,0 +1,38 @@
+package tech.nikant.mapping;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+
+import tech.nikant.annotations.Mapper;
+import tech.nikant.pojo.EmployeeDto;
+import tech.nikant.pojo.EmployeeTo;
+
+public class POJOMapping {
+
+	public EmployeeDto MapEmployeeDtoToEmployeeTO() throws NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+		EmployeeDto dto = new EmployeeDto(101,"Nikant","Development");
+		Class dtoClass = EmployeeDto.class;
+		Annotation annotation = dtoClass.getAnnotation(Mapper.class);
+		Mapper myAnnotation = (Mapper) annotation;
+		Class<?> targetClass = myAnnotation.target();
+		System.out.println(targetClass.getCanonicalName());
+		
+		Field idField = dtoClass.getDeclaredField("id");
+		idField.setAccessible(true);
+		
+		Field nameField = dtoClass.getDeclaredField("name");
+		nameField.setAccessible(true);
+		
+		Field departmentField = dtoClass.getDeclaredField("department");
+		departmentField.setAccessible(true);
+		
+		EmployeeTo to = new EmployeeTo();
+		to.setId(idField.getInt(dto));
+		to.setName((String)nameField);
+		to.setDepartment(departmentField.toString());
+		
+		System.out.println(to);
+		
+		return dto;
+	}
+}

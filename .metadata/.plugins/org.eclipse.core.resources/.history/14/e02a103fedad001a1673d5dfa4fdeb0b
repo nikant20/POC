@@ -1,0 +1,20 @@
+package tech.nikant.mapping;
+
+import tech.nikant.annotations.Mapper;
+import tech.nikant.pojo.EmployeeDto;
+
+public class Map {
+	public static void main(String[] args) {
+		
+		EmployeeDto dto = new EmployeeDto();
+		try {
+			Class<?> dtoClass = dto.getClass();
+			Mapper mapper = dtoClass.getAnnotation(Mapper.class);
+			mapper.target();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}
