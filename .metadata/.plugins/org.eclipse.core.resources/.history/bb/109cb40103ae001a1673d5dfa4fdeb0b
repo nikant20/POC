@@ -33,7 +33,7 @@ public class POJOMapping {
 		Field departmentField = dtoClass.getDeclaredField("department");
 		departmentField.setAccessible(true);
 
-		//Creating an object of Target Class & Setting values to respective setter fields
+		//Creating an object of Target Class
 		Object targetClassObject = targetClass.newInstance();
 		Method setNameMethod = targetClass.getMethod("setName", String.class);
 		setNameMethod.invoke(targetClassObject, (String) nameField.get(dto));
